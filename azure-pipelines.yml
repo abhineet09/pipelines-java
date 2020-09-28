@@ -12,6 +12,6 @@ extends:
       isTrue: true
       
 extends:
-  template: jobs1.yml
+  template: abc.yml
   parameters:
-      isTrue: true
+      yesNo: true
