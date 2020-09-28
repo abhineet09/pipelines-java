@@ -7,7 +7,8 @@ trigger:
 - master
 
 variables:
-  -myvar: 'true'
+  -name: myvar
+    value: 'Hello world'
 
 jobs:
 - job: A
