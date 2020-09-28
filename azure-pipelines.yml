@@ -11,11 +11,7 @@ parameters:
 - name: experimentalTemplate
   displayName: 'Use experimental build process?'
   type: boolean
-  default: false
-
-- template: azure-pipeline.yml
-      parameters:
-          experimentalTemplate: true
+  default: true
           
 steps:
   - ${{ if eq(parameters.experimentalTemplate, true) }}:
