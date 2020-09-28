@@ -7,10 +7,6 @@ trigger:
 - master
 
 extends:
-- templates:
-  - template: jobs1.yml
+  template: jobs1.yml
     parameters:
         isTrue: true
-  - template: abc.yml
-    parameters:
-        yesNo: true
