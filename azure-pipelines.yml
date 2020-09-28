@@ -6,16 +6,12 @@
 trigger:
 - master
 
-pool:
-   vmImage: 'ubuntu-16.04'
-
 jobs:
-  -job: myJob
-    steps:
-    -bash: echo "hello world"
-  -job: aJob
-    steps:
-        template: abc.yml
-            parameters:
-                yesNo: 'Hello Azure Devops'
+- job: A
+  steps:
+  - bash: echo "A"
+
+- job: B
+  steps:
+  - bash: echo "B"
    
