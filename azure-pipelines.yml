@@ -7,8 +7,8 @@ trigger:
 - master
 
 variables:
-  -name: myvar
-   value: Hello world
+- name: one
+  value: initialValue
 
 jobs:
 - job: A
