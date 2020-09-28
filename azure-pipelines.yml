@@ -31,6 +31,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-- ${{ if eq(parameters.experimentalTemplate, true) }}:
-  - template: abc.yml
