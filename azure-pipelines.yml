@@ -21,6 +21,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:    
--task: mytask
-  - ${{ if eq(parameters.experimentalTemplate, true) }}:
-    - template: abc.yml
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+
+- ${{ if eq(parameters.experimentalTemplate, true) }}:
+  - template: abc.yml
