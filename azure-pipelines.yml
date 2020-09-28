@@ -9,4 +9,4 @@ trigger:
 extends:
   template: abc.yml
   parameters:
-      yesNo: false # set to a non-boolean value to have the build fail
+      yesNo: 'Hello Azure Devops' # set to a non-boolean value to have the build fail
