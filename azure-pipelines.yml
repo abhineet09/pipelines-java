@@ -12,17 +12,19 @@ parameters:
   displayName: 'Use experimental build process?'
   type: boolean
   default: true
-          
-steps:
-  -task: 
-    ${{ if eq(parameters.experimentalTemplate, true) }}:
-      template: abc.yml
-        parameters:
-            yesNo: 'Hello Azure Devops'
-    ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-      template: abc.yml
-        parameters:
-            yesNo: 'Redirecting to other template...'
-  -task: 
-    script: echo Hello Abhineet
+
+jobs:
+  -job: myJob
+    steps:
+    -bash: echo "hello world"
+  -job: aJob
+    steps:
+        ${{ if eq(parameters.experimentalTemplate, true) }}:
+          template: abc.yml
+            parameters:
+                yesNo: 'Hello Azure Devops'
+        ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+          template: abc.yml
+            parameters:
+                yesNo: 'Redirecting to other template...'
    
