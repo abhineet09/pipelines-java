@@ -17,7 +17,7 @@ parameters:
 jobs:
   job: 'Assign experimentalTemplate value'
   steps:
-    -${{ parameters.experimentalTemplate: true }}
+    -script: ${{ parameters.experimentalTemplate }}:true
     
   job: 'Call yml file based on experimentalTemplate value'
    steps:
