@@ -32,6 +32,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
- steps:
+-task: mytask
   - ${{ if eq(parameters.experimentalTemplate, true) }}:
     - template: abc.yml
