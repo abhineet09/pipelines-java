@@ -15,14 +15,14 @@ parameters:
           
 steps:
   -task: task1@1
-    - ${{ if eq(parameters.experimentalTemplate, true) }}:
-      - template: abc.yml
+    ${{ if eq(parameters.experimentalTemplate, true) }}:
+      template: abc.yml
         parameters:
             yesNo: 'Hello Azure Devops'
-    - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-      - template: abc.yml
+    ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+      template: abc.yml
         parameters:
             yesNo: 'Redirecting to other template...'
   -task: task2@1
-    -script: echo Hello Abhineet
+    script: echo Hello Abhineet
    
