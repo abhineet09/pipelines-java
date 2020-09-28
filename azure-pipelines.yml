@@ -13,15 +13,13 @@ parameters:
   type: boolean
   default: true
           
-          
-jobs: 
- -job: Call
-   -steps:
-    - ${{ if eq(parameters.experimentalTemplate, true) }}:
-      - template: abc.yml
-        parameters:
-            yesNo: 'Hello Azure Devops'
-    - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-      - template: abc.yml
-        parameters:
-            yesNo: 'Redirecting to other template...'
+-steps:
+  - ${{ if eq(parameters.experimentalTemplate, true) }}:
+    - template: abc.yml
+      parameters:
+          yesNo: 'Hello Azure Devops'
+  - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+    - template: abc.yml
+      parameters:
+          yesNo: 'Redirecting to other template...'
+   
