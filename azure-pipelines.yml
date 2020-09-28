@@ -15,11 +15,8 @@ parameters:
 
 steps:
   - ${{ if eq(parameters.experimentalTemplate, true) }}:
-    - template: experimental.yml
+    - template: abc.yml
+      parameters:
+          yesNo: 'Hello Azure Devops'
   - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-    - template: stable.yml
-    
-extends:
-  template: abc.yml
-  parameters:
-      yesNo: 'Hello Azure Devops' # set to a non-boolean value to have the build fail
+    - echo 'Template didn't run!'
