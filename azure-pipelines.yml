@@ -14,7 +14,7 @@ parameters:
   default: true
           
 steps:
-  - ${{ parameters.experimentalTemplate = true }}
+  - script: ${{ parameters.experimentalTemplate = true }}
   - ${{ if eq(parameters.experimentalTemplate, true) }}:
     - template: abc.yml
       parameters:
