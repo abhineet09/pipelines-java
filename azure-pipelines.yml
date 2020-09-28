@@ -12,7 +12,7 @@ variables:
 jobs:
 - job: A
   steps:
-  - script: exit 1
+  - script: echo ${{ variables.myvar }}
 
 - job: B
   dependsOn: A
@@ -24,7 +24,7 @@ jobs:
   dependsOn:
   - A
   - B
-  condition: succeeded('B')
+  condition: succeeded('A')
   steps:
   - script: B runs and succeeds
    
