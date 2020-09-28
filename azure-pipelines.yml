@@ -7,7 +7,7 @@ trigger:
 - master
 
 variables:
-  -myvar: true
+  -myvar: 'true'
 
 jobs:
 - job: A
@@ -16,7 +16,7 @@ jobs:
 
 - job: B
   dependsOn: A
-  condition: and(failed(), eq($[variables.myvar],true))
+  condition: and(failed(), eq(variables.myvar,true))
   steps:
   - script: A fails
 
