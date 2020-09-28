@@ -19,4 +19,6 @@ steps:
       parameters:
           yesNo: 'Hello Azure Devops'
   - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-    -bash: echo 'Template didn't run!'
+    - template: abc.yml
+      parameters:
+          yesNo: 'Redirecting to other template...'
