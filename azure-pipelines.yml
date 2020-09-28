@@ -19,4 +19,4 @@ steps:
       parameters:
           yesNo: 'Hello Azure Devops'
   - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-    - echo 'Template didn't run!'
+    -bash: echo 'Template didn't run!'
