@@ -15,8 +15,8 @@ parameters:
           
           
 jobs: 
- -job: 'Call yml file based on experimentalTemplate value'
-   -steps:
+ -job: Call
+   steps:
     - ${{ if eq(parameters.experimentalTemplate, true) }}:
       - template: abc.yml
         parameters:
