@@ -8,7 +8,7 @@ trigger:
 
 variables:
   -name: myvar
-    value: 'Hello world'
+   value: 'Hello world'
 
 jobs:
 - job: A
