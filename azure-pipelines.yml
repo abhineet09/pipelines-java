@@ -6,5 +6,12 @@
 trigger:
 - master
 
-
-   
+extends:
+  template: jobs1.yml
+  parameters:
+      isTrue: true
+      
+extends:
+  template: jobs1.yml
+  parameters:
+      isTrue: true
