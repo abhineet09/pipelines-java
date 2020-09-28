@@ -7,16 +7,6 @@ trigger:
 - master
 
 extends:
-  template: abc.yml
+  template: simple-param.yml
   parameters:
-      mystr: 'Hello Azure Pipelines'
-
-parameters:
-- name: experimentalTemplate
-  displayName: 'Use experimental build process?'
-  type: boolean
-  default: true
-
-steps:
-  - ${{ if eq(parameters.experimentalTemplate, true) }}:
-    - template: abc.yml
+      yesNo: false # set to a non-boolean value to have the build fail
