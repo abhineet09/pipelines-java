@@ -7,6 +7,6 @@ trigger:
 - master
 
 extends:
-  template: simple-param.yml
+  template: jobs1.yml
   parameters:
       yesNo: false
