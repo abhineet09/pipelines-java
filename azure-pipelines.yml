@@ -6,13 +6,6 @@
 trigger:
 - master
 
-#azure-pipeline.yml
-parameters:
-- name: experimentalTemplate
-  displayName: 'Use experimental build process?'
-  type: boolean
-  default: true
-
 jobs:
   -job: myJob
     steps:
