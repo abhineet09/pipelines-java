@@ -14,11 +14,7 @@ parameters:
   default: true
           
           
-jobs:
-  -job: 'Assign experimentalTemplate value'
-  steps:
-    -script: ${{ parameters.experimentalTemplate }}:true
-    
+jobs: 
   -job: 'Call yml file based on experimentalTemplate value'
    steps:
     - ${{ if eq(parameters.experimentalTemplate, true) }}:
