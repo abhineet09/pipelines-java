@@ -13,7 +13,7 @@ parameters:
   type: boolean
   default: true
           
--steps:
+steps:
   - ${{ if eq(parameters.experimentalTemplate, true) }}:
     - template: abc.yml
       parameters:
