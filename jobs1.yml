@@ -1,6 +1,11 @@
 variables:
 - name: myvar
-  value: true
+  value: false
+  
+parameters:
+- name: isTrue
+  type: boolean
+  default: false
 
 jobs:
 - job: A
@@ -9,7 +14,7 @@ jobs:
 
 - job: B
   dependsOn: A
-  condition: and(failed(), eq(variables.myvar,true))
+  condition: and(failed(), eq(parameters.isTrue,true))
   steps:
   - script: echo A fails
 
