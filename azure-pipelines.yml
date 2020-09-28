@@ -8,12 +8,12 @@ trigger:
 
 variables:
 - name: myvar
-  value: initialValue
+  value: true
 
 jobs:
 - job: A
   steps:
-  - script: echo ${{ variables.myvar }}
+  - script: exit 1
 
 - job: B
   dependsOn: A
@@ -25,7 +25,7 @@ jobs:
   dependsOn:
   - A
   - B
-  condition: succeeded('A')
+  condition: succeeded('B')
   steps:
   - script: B runs and succeeds
    
