@@ -1,0 +1,22 @@
+variables:
+- name: myvar
+  value: true
+
+jobs:
+- job: A
+  steps:
+  - script: exit 1
+
+- job: B
+  dependsOn: A
+  condition: and(failed(), eq(variables.myvar,true))
+  steps:
+  - script: echo A fails
+
+- job: C
+  dependsOn:
+  - A
+  - B
+  condition: succeeded('B')
+  steps:
+  - script: echo B runs and succeeds
