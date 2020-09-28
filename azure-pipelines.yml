@@ -9,4 +9,4 @@ trigger:
 extends:
   template: jobs1.yml
   parameters:
-      isTrue: false
+      isTrue: true
