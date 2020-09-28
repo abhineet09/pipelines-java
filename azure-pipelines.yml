@@ -16,7 +16,7 @@ parameters:
           
 jobs: 
  -job: Call
-   steps:
+   -steps:
     - ${{ if eq(parameters.experimentalTemplate, true) }}:
       - template: abc.yml
         parameters:
