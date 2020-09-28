@@ -6,6 +6,10 @@
 trigger:
 - master
 
+variables:
+  -name: myvar
+  value: true
+
 jobs:
 - job: A
   steps:
@@ -13,9 +17,9 @@ jobs:
 
 - job: B
   dependsOn: A
-  condition: failed()
+  condition: and(failed(), eq(variables['myvar'],true))
   steps:
-  - script: echo this will run when A fails
+  - script: A fails
 
 - job: C
   dependsOn:
@@ -23,5 +27,5 @@ jobs:
   - B
   condition: succeeded('B')
   steps:
-  - script: echo this will run when B runs and succeeds
+  - script: B runs and succeeds
    
