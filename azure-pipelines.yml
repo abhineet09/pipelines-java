@@ -12,12 +12,7 @@ jobs:
     -bash: echo "hello world"
   -job: aJob
     steps:
-        ${{ if eq(parameters.experimentalTemplate, true) }}:
-          template: abc.yml
+        template: abc.yml
             parameters:
                 yesNo: 'Hello Azure Devops'
-        ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-          template: abc.yml
-            parameters:
-                yesNo: 'Redirecting to other template...'
    
